@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
-const baseURL = "https://api.meaningcloud.com/sentiment-2.1?";
+const baseURL = "https://api.meaningcloud.com/sentiment-2.1?key=";
 const API_KEY = process.env.API_KEY;
 
 const fetch = require('node-fetch');
@@ -40,11 +40,11 @@ app.get('/', function (req, res) {
 app.post('/analysis', async (req, res) => {
     console.log(req.body);
 
-    const response = await fetch(`${baseURL}${API_KEY}&of=json&lang=en&txt=${req.body.txt}&model=general&url=${req.body.url}`);
+    const response = await fetch(`${baseURL}${API_KEY}&of=json&lang=en&model=general&url=$${req.body.url}`);
     try {
         const data = await response.json();
+        console.log(data)
         res.send(data)
-        res.json()
     } catch(error) {
         console.log('error', error);
     }

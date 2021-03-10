@@ -6,12 +6,12 @@ function handleSubmit(event) {
     Client.checkForName(formText)
 
     console.log("::: Form Submitted :::")
-    postText(formText)
-    
+    postText({txt:formText})
+    console.log({txt:formText});
 }
 
 // post data function - send data to server
-const postText = (url = '') => {
+const postText = (data = {}) => {
     const response = fetch('http://localhost:8081/analysis', {
         method: 'POST',
         credentials: 'same-origin',
@@ -19,7 +19,7 @@ const postText = (url = '') => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: url,
+        body: JSON.stringify({url: url}),
     })
         .then(res => res.json())
         .then((data) => updateUI(data))
@@ -32,12 +32,6 @@ const postText = (url = '') => {
 
             }
     
-
-
-
-
-
-
 
 }
 
