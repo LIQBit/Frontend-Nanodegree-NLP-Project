@@ -6,8 +6,8 @@ function handleSubmit(event) {
     Client.checkForName(formText)
 
     console.log("::: Form Submitted :::")
-    postText({txt:formText})
-    console.log({txt:formText});
+    postText({url:formText})
+    console.log({url:formText});
 }
 
 // post data function - send data to server
@@ -19,7 +19,7 @@ const postText = (data = {}) => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({url: url}),
+        body: JSON.stringify(data),
     })
         .then(res => res.json())
         .then((data) => updateUI(data))

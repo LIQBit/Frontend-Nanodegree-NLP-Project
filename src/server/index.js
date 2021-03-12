@@ -40,7 +40,7 @@ app.get('/', function (req, res) {
 app.post('/analysis', async (req, res) => {
     console.log(req.body);
 
-    const response = await fetch(`${baseURL}${API_KEY}&of=json&lang=en&model=general&url=$${req.body.url}`);
+    const response = await fetch(`${baseURL}${API_KEY}&of=json&lang=en&model=general&url=${req.body.url}`);
     try {
         const data = await response.json();
         console.log(data)
