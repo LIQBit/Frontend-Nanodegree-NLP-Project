@@ -11,7 +11,7 @@ function handleSubmit(event) {
 }
 
 // post data function - send data to server
-const postText = (data = {}) => {
+export const postText = (data = {}) => {
     const response = fetch('http://localhost:8081/analysis', {
         method: 'POST',
         credentials: 'same-origin',
@@ -34,6 +34,7 @@ function updateUI(data) {
     document.getElementById('confidence').innerHTML = `Confidence: ${data.confidence}`;
     document.getElementById('subjectivity').innerHTML = `Subjectivity ${data.subjectivity}`;
     document.getElementById('irony').innerHTML = `Irony ${data.irony}`;
+    document.getElementById('score').innerHTML = `Score Tag: ${data.score_tag}`;
 }
 
 export { handleSubmit }
