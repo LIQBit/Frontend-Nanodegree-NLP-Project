@@ -1,4 +1,4 @@
-import "babel-polyfill";
+
 import { postText } from "../src/client/js/formHandler";
 
 
