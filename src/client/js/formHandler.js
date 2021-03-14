@@ -26,13 +26,14 @@ const postText = (data = {}) => {
         .catch((error) => {
             console.log('error', error);
         });
-            function updateUI(data) {
-                console.log(data);
-                //just console.log data for now
+        
+}
 
-            }
-    
-
+function updateUI(data) {
+    console.log(data)
+    document.getElementById('confidence').innerHTML = `Confidence: ${data.confidence}`;
+    document.getElementById('subjectivity').innerHTML = `Subjectivity ${data.subjectivity}`;
+    document.getElementById('irony').innerHTML = `Irony ${data.irony}`;
 }
 
 export { handleSubmit }
