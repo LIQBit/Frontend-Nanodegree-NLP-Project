@@ -2,6 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: rgba(111, 178, 255, 0.719);
+    font-family: 'Anton', sans-serif;
 }
 
 main {
@@ -10,5 +12,30 @@ main {
 
 section {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 20px auto;
+    padding: 5px;
+    
+    h1 {
+        font-size: 1.7em;
+        text-align: center;
+    }
+    #results {
+        font-size: 22px;
+        padding-top: 10px;
+        text-align: center;
+        .res {
+            padding: 10px;
+        }
+    }
+    
 }
+
+// media query for style over 900px
+@media(min-width:900px) {
+    section {
+        margin: 60px auto;  
+    }
+    
+}
+
+

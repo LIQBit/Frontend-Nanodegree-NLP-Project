@@ -1,5 +1,30 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 40px;
+    padding: 40px 40px;
+    margin-left: auto;
+    margin-right: auto;
+    .logo {
+        width: 100%;
+        font-size: 7vw;
+        font-weight: bold;
+    }
 }
+
+
+// media query for style over 900px
+@media(min-width:900px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 40px;
+        margin-left: auto;
+        margin-right: auto;
+        .logo {
+            font-size: 4em;
+        }
+    }
+    
+    
+}
+

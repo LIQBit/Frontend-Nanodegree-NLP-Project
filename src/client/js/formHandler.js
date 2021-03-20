@@ -32,8 +32,8 @@ export const postText = (data = {}) => {
 function updateUI(data) {
     console.log(data)
     document.getElementById('confidence').innerHTML = `Confidence: ${data.confidence}`;
-    document.getElementById('subjectivity').innerHTML = `Subjectivity ${data.subjectivity}`;
-    document.getElementById('irony').innerHTML = `Irony ${data.irony}`;
+    document.getElementById('subjectivity').innerHTML = `Subjectivity: ${data.subjectivity}`;
+    document.getElementById('irony').innerHTML = `Irony: ${data.irony}`;
     document.getElementById('score').innerHTML = `Score Tag: ${data.score_tag}`;
 }
 
